@@ -1,10 +1,10 @@
-version: '3'
+version: '3.4'
 
 services:
   app:
     entrypoint: [bin/start]
-    image: bigbluebutton/greenlight:v2
-    container_name: greenlight-v2
+    image: videoconf:release-v2
+    container_name: videoconf-v2
     env_file: .env
     restart: unless-stopped
     ports:
@@ -28,8 +28,10 @@ services:
     ports:
       - 127.0.0.1:5432:5432
     volumes:
-      - ./db/production:/var/lib/postgresql/data
+      - videoconfdb:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
+volumes:
+  videoconfdb:
