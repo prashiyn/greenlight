@@ -131,7 +131,7 @@ module Greenlight
     # DEFAULTS
 
     # Default branding image if the user does not specify one
-    config.branding_image_default = asset_path("logo_with_text.png")
+    config.branding_image_default = "http://raw.githubusercontent.com/prashiyn/greenlight/master/app/assets/images/logo_with_text.png"
 
     # Default primary color if the user does not specify one
     config.primary_color_default = "#5271ff"
